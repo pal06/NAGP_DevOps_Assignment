@@ -18,17 +18,7 @@ environment {
                 bat 'git checkout'
             }
         }
-        
-        stage('Build and Test') {
-            steps {
-                script {
-		// execute the build
-		bat 'mvn clean test'
-                }
-            }
-        }
-		
-		stage('SonarQube Analysis') {
+        stage('SonarQube Analysis') {
             steps {
                 script {
                     def scannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
@@ -39,6 +29,16 @@ environment {
                 }
             }
         }
+        stage('Build and Test') {
+            steps {
+                script {
+		// execute the build
+		bat 'mvn clean test'
+                }
+            }
+        }
+		
+		
     }
     
     post {
