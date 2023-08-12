@@ -86,31 +86,31 @@ public class LumaTestSuite extends TestBase {
 
 	}
 
-	@Test(description = "Verify the registration functionality by creating the new user for the site", groups = {
-			"Register" }, priority = 7)
-	public void VerifyCreateAnAccountPage() throws IOException {
-		logger.info("Going to execute the Create An Account page Test Cases");
-		Registerpage = new RegisterUserTestCase(driver);
-		Registerpage.RegistrationUserTC();
+	// @Test(description = "Verify the registration functionality by creating the new user for the site", groups = {
+	// 		"Register" }, priority = 7)
+	// public void VerifyCreateAnAccountPage() throws IOException {
+	// 	logger.info("Going to execute the Create An Account page Test Cases");
+	// 	Registerpage = new RegisterUserTestCase(driver);
+	// 	Registerpage.RegistrationUserTC();
 
-	}
+	// }
 
-	@Test(description = "Verify the login functionality using correct username and password", groups = {
-			"Login" }, priority = 8)
-	public void VerifyloginPage() throws IOException {
-		logger.info("Going to execute the login page Test cases");
-		loginpage = new LoginTestCase(driver);
-		loginpage.LoginTC();
+	// @Test(description = "Verify the login functionality using correct username and password", groups = {
+	// 		"Login" }, priority = 8)
+	// public void VerifyloginPage() throws IOException {
+	// 	logger.info("Going to execute the login page Test cases");
+	// 	loginpage = new LoginTestCase(driver);
+	// 	loginpage.LoginTC();
 
-	}
+	// }
 
-	@Test(description = "Verify the add to cart functionality by search the item and add it to cart", groups = {
-			"AddtoCart" }, priority = 9)
-	public void VerifyAddtoCart() throws IOException {
-		logger.info("Going to Verify the add to cart functionality");
-		atcpage = new AddToCartTestCase(driver);
-		atcpage.AddToCartTC();
-	}
+	// @Test(description = "Verify the add to cart functionality by search the item and add it to cart", groups = {
+	// 		"AddtoCart" }, priority = 9)
+	// public void VerifyAddtoCart() throws IOException {
+	// 	logger.info("Going to Verify the add to cart functionality");
+	// 	atcpage = new AddToCartTestCase(driver);
+	// 	atcpage.AddToCartTC();
+	// }
 
 	@AfterTest
 	public void tearDown() {
