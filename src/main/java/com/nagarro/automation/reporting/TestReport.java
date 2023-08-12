@@ -51,8 +51,8 @@ public class TestReport {
 	}
 
 	public void createReport() throws IOException {
-		clean = new CleanUp();
-		clean.cleanDirectory();
+		// clean = new CleanUp();
+		// clean.cleanDirectory();
 		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("Current test results/TestReport.html");
 		extent = new ExtentReports();
 		extent.attachReporter(htmlReporter);
