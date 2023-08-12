@@ -3,6 +3,10 @@ pipeline {
 	triggers {
         cron('0 20 * * *') // Run every night at 8 PM
     }
+environment {
+        JAVA_HOME = 'C:/Users/palvika/jdk-17'
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
+    }
 	tools{
 		maven 'mvn_home'
 	}
