@@ -27,7 +27,9 @@ public class CleanUp {
 
 	// It copy the result directory
 	private void copyResultDir() throws IOException {
+		try {
 		Path sourceDir = Paths.get(resultPath);
+		
 		// Create a new ZIP archive for the test results
 		zipFile = Paths.get(archivePath + "/archive.zip");
 		if (!Files.exists(zipFile)) {
@@ -38,8 +40,7 @@ public class CleanUp {
 				e.printStackTrace();
 				logger.error("zip file is not created");
 			}
-		}
-
+		
 		// Copy all test result files to a temporary directory
 		tempDir = Files.createTempDirectory("test-results");
 		Files.walk(sourceDir).filter(Files::isRegularFile).forEach(sourceFile -> {
@@ -51,6 +52,10 @@ public class CleanUp {
 				logger.error("Error copying file: " + ex.getMessage());
 			}
 		});
+		}
+		}catch (IOException ex) {
+			logger.info("no zip file there");
+		}
 	}
 
 	// it compress the result directory
