@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout your source code from GitHub
-                bat 'git checkout'
+                bat 'git clone https://github.com/pal06/NAGP_DevOps_Assignment.git'
             }
         }
         
@@ -28,10 +28,10 @@ pipeline {
     post {
         always {
             // Archive the generated test reports
-            archiveArtifacts artifacts: 'NAGP_Devops/palvika/project/target/surefire-reports/*.xml', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'NAGP_DevOps_Assignment/palvika/project/target/surefire-reports/*.xml', allowEmptyArchive: true
             
             // Publish JUnit test results
-            junit 'NAGP_Devops/palvika/project/target/surefire-reports/*.xml'
+            junit 'NAGP_DevOps_Assignment/palvika/project/target/surefire-reports/*.xml'
         }
     }
 }
